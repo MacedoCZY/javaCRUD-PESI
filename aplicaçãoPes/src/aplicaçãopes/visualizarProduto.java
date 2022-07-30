@@ -28,12 +28,18 @@ public class visualizarProduto extends javax.swing.JFrame {
 
         buttonHome = new javax.swing.JButton();
         buttonCadProd = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jList2 = new javax.swing.JList<>();
+        buttonEditProd = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setLocation(new java.awt.Point(250, 25));
-        setMaximumSize(new java.awt.Dimension(1366, 768));
+        setLocation(new java.awt.Point(228, 32));
+        setMaximumSize(new java.awt.Dimension(1280, 720));
         setMinimumSize(new java.awt.Dimension(800, 600));
+        setPreferredSize(new java.awt.Dimension(800, 600));
 
+        buttonHome.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         buttonHome.setText("HOME");
         buttonHome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -41,10 +47,50 @@ public class visualizarProduto extends javax.swing.JFrame {
             }
         });
 
+        buttonCadProd.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         buttonCadProd.setText("Cadastrar Produto");
+        buttonCadProd.setBorderPainted(false);
+        buttonCadProd.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        buttonCadProd.setRequestFocusEnabled(false);
         buttonCadProd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonCadProdActionPerformed(evt);
+            }
+        });
+
+        jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        jList2.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane2.setViewportView(jList2);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 725, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 510, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        buttonEditProd.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        buttonEditProd.setText("Editar Produto");
+        buttonEditProd.setBorderPainted(false);
+        buttonEditProd.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        buttonEditProd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonEditProdActionPerformed(evt);
             }
         });
 
@@ -53,20 +99,28 @@ public class visualizarProduto extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(buttonHome)
-                .addGap(38, 38, 38)
-                .addComponent(buttonCadProd)
-                .addContainerGap(554, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(buttonHome)
+                        .addGap(33, 33, 33)
+                        .addComponent(buttonCadProd)
+                        .addGap(33, 33, 33)
+                        .addComponent(buttonEditProd)))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(buttonHome)
-                    .addComponent(buttonCadProd))
-                .addContainerGap(562, Short.MAX_VALUE))
+                    .addComponent(buttonCadProd)
+                    .addComponent(buttonEditProd))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(10, Short.MAX_VALUE))
         );
 
         pack();
@@ -82,6 +136,10 @@ public class visualizarProduto extends javax.swing.JFrame {
         // TODO add your handling code here:
         new cadastroProduto().setVisible(true);
     }//GEN-LAST:event_buttonCadProdActionPerformed
+
+    private void buttonEditProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonEditProdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonEditProdActionPerformed
 
     /**
      * @param args the command line arguments
@@ -121,6 +179,10 @@ public class visualizarProduto extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonCadProd;
+    private javax.swing.JButton buttonEditProd;
     private javax.swing.JButton buttonHome;
+    private javax.swing.JList<String> jList2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
 }
