@@ -4,13 +4,13 @@
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
     <Property name="location" type="java.awt.Point" editor="org.netbeans.beaninfo.editors.PointEditor">
-      <Point value="[250, 25]"/>
+      <Point value="[350, 135]"/>
     </Property>
     <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
       <Dimension value="[1366, 768]"/>
     </Property>
     <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[800, 600]"/>
+      <Dimension value="[600, 400]"/>
     </Property>
   </Properties>
   <SyntheticProperties>
@@ -79,10 +79,10 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="buttonHome" min="-2" max="-2" attributes="0"/>
+                      <Component id="buttonClose" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="262" max="32767" attributes="0"/>
+              <EmptySpace pref="62" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -90,7 +90,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="buttonHome" min="-2" max="-2" attributes="0"/>
+              <Component id="buttonClose" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="textID" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -117,7 +117,7 @@
                   <Component id="textICMS" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="labelICMS" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="310" max="32767" attributes="0"/>
+              <EmptySpace pref="110" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -270,12 +270,12 @@
         <Property name="text" type="java.lang.String" value="C&#xf3;digo de Barras :"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="buttonHome">
+    <Component class="javax.swing.JButton" name="buttonClose">
       <Properties>
-        <Property name="text" type="java.lang.String" value="HOME"/>
+        <Property name="text" type="java.lang.String" value="CLOSE"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonHomeActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonCloseActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

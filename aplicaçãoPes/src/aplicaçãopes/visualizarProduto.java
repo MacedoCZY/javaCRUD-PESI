@@ -8,12 +8,12 @@ package aplicaçãopes;
  *
  * @author gusta
  */
-public class menu extends javax.swing.JFrame {
+public class visualizarProduto extends javax.swing.JFrame {
 
     /**
-     * Creates new form menu
+     * Creates new form cadastroProdutoJF
      */
-    public menu() {
+    public visualizarProduto() {
         initComponents();
     }
 
@@ -26,21 +26,25 @@ public class menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonViwProd = new javax.swing.JButton();
+        buttonHome = new javax.swing.JButton();
+        buttonCadProd = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setFocusable(false);
         setLocation(new java.awt.Point(250, 25));
         setMaximumSize(new java.awt.Dimension(1366, 768));
         setMinimumSize(new java.awt.Dimension(800, 600));
 
-        buttonViwProd.setText("Visualizar Produtos");
-        buttonViwProd.setMaximumSize(new java.awt.Dimension(250, 50));
-        buttonViwProd.setMinimumSize(new java.awt.Dimension(250, 50));
-        buttonViwProd.setPreferredSize(new java.awt.Dimension(250, 50));
-        buttonViwProd.addActionListener(new java.awt.event.ActionListener() {
+        buttonHome.setText("HOME");
+        buttonHome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonViwProdActionPerformed(evt);
+                buttonHomeActionPerformed(evt);
+            }
+        });
+
+        buttonCadProd.setText("Cadastrar Produto");
+        buttonCadProd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonCadProdActionPerformed(evt);
             }
         });
 
@@ -49,26 +53,35 @@ public class menu extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(83, 83, 83)
-                .addComponent(buttonViwProd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(467, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(buttonHome)
+                .addGap(38, 38, 38)
+                .addComponent(buttonCadProd)
+                .addContainerGap(554, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(45, 45, 45)
-                .addComponent(buttonViwProd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(505, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonHome)
+                    .addComponent(buttonCadProd))
+                .addContainerGap(562, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void buttonViwProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonViwProdActionPerformed
+    private void buttonHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonHomeActionPerformed
         // TODO add your handling code here:
-        new visualizarProduto().setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_buttonViwProdActionPerformed
+       new menu().setVisible(true);
+       this.dispose();
+    }//GEN-LAST:event_buttonHomeActionPerformed
+
+    private void buttonCadProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCadProdActionPerformed
+        // TODO add your handling code here:
+        new cadastroProduto().setVisible(true);
+    }//GEN-LAST:event_buttonCadProdActionPerformed
 
     /**
      * @param args the command line arguments
@@ -87,25 +100,27 @@ public class menu extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(visualizarProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(visualizarProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(visualizarProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(visualizarProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new menu().setVisible(true);
+                new visualizarProduto().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton buttonViwProd;
+    private javax.swing.JButton buttonCadProd;
+    private javax.swing.JButton buttonHome;
     // End of variables declaration//GEN-END:variables
 }

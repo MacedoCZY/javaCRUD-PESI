@@ -35,7 +35,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
-              <Component id="buttonCadastroProduto" min="-2" max="-2" attributes="0"/>
+              <Component id="buttonViwProd" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="467" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -44,16 +44,16 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
-              <Component id="buttonCadastroProduto" min="-2" max="-2" attributes="0"/>
+              <Component id="buttonViwProd" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="505" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JButton" name="buttonCadastroProduto">
+    <Component class="javax.swing.JButton" name="buttonViwProd">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Cadastro de Produto"/>
+        <Property name="text" type="java.lang.String" value="Visualizar Produtos"/>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[250, 50]"/>
         </Property>
@@ -65,7 +65,7 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonCadastroProdutoActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonViwProdActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

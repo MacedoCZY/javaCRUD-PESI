@@ -8,12 +8,12 @@ package aplicaçãopes;
  *
  * @author gusta
  */
-public class cadastroProdutoJF extends javax.swing.JFrame {
+public class cadastroProduto extends javax.swing.JFrame {
 
     /**
      * Creates new form cadastroProdutoJF
      */
-    public cadastroProdutoJF() {
+    public cadastroProduto() {
         initComponents();
     }
 
@@ -40,12 +40,12 @@ public class cadastroProdutoJF extends javax.swing.JFrame {
         labelPreco = new javax.swing.JLabel();
         labelEmpac = new javax.swing.JLabel();
         labelCodBarra = new javax.swing.JLabel();
-        buttonHome = new javax.swing.JButton();
+        buttonClose = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setLocation(new java.awt.Point(250, 25));
+        setLocation(new java.awt.Point(350, 135));
         setMaximumSize(new java.awt.Dimension(1366, 768));
-        setMinimumSize(new java.awt.Dimension(800, 600));
+        setMinimumSize(new java.awt.Dimension(600, 400));
 
         textID.setMaximumSize(new java.awt.Dimension(450, 25));
         textID.setMinimumSize(new java.awt.Dimension(450, 25));
@@ -124,10 +124,10 @@ public class cadastroProdutoJF extends javax.swing.JFrame {
 
         labelCodBarra.setText("Código de Barras :");
 
-        buttonHome.setText("HOME");
-        buttonHome.addActionListener(new java.awt.event.ActionListener() {
+        buttonClose.setText("CLOSE");
+        buttonClose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonHomeActionPerformed(evt);
+                buttonCloseActionPerformed(evt);
             }
         });
 
@@ -172,14 +172,14 @@ public class cadastroProdutoJF extends javax.swing.JFrame {
                                 .addComponent(textPreco, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(buttonHome)))
-                .addContainerGap(262, Short.MAX_VALUE))
+                        .addComponent(buttonClose)))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(buttonHome)
+                .addComponent(buttonClose)
                 .addGap(37, 37, 37)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -202,7 +202,7 @@ public class cadastroProdutoJF extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textICMS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(labelICMS, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(310, Short.MAX_VALUE))
+                .addContainerGap(110, Short.MAX_VALUE))
         );
 
         pack();
@@ -236,11 +236,10 @@ public class cadastroProdutoJF extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_textCodBarraActionPerformed
 
-    private void buttonHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonHomeActionPerformed
+    private void buttonCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCloseActionPerformed
         // TODO add your handling code here:
-       new menu().setVisible(true);
        this.dispose();
-    }//GEN-LAST:event_buttonHomeActionPerformed
+    }//GEN-LAST:event_buttonCloseActionPerformed
 
     /**
      * @param args the command line arguments
@@ -259,26 +258,27 @@ public class cadastroProdutoJF extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(cadastroProdutoJF.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(cadastroProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(cadastroProdutoJF.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(cadastroProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(cadastroProdutoJF.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(cadastroProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(cadastroProdutoJF.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(cadastroProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new cadastroProdutoJF().setVisible(true);
+                new cadastroProduto().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton buttonHome;
+    private javax.swing.JButton buttonClose;
     private javax.swing.JLabel labelCodBarra;
     private javax.swing.JLabel labelDesc;
     private javax.swing.JLabel labelEmpac;
