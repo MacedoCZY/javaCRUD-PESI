@@ -39,7 +39,6 @@ public class visualizarProduto extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(800, 600));
         setPreferredSize(new java.awt.Dimension(800, 600));
 
-        buttonHome.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         buttonHome.setText("HOME");
         buttonHome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -47,7 +46,6 @@ public class visualizarProduto extends javax.swing.JFrame {
             }
         });
 
-        buttonCadProd.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         buttonCadProd.setText("Cadastrar Produto");
         buttonCadProd.setBorderPainted(false);
         buttonCadProd.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -84,7 +82,6 @@ public class visualizarProduto extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        buttonEditProd.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         buttonEditProd.setText("Editar Produto");
         buttonEditProd.setBorderPainted(false);
         buttonEditProd.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -120,7 +117,7 @@ public class visualizarProduto extends javax.swing.JFrame {
                     .addComponent(buttonEditProd))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap(10, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
