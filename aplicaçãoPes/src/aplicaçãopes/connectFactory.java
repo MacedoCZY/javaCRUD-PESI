@@ -16,7 +16,7 @@ import java.sql.DriverManager;
 public class connectFactory {
     
     private static final String DRIVER = "org.postgresql.Driver";
-    private static final String URL = "jdbc:mysql://localhost:3306?serverTimezone=UTC";
+    private static final String URL = "jdbc:mysql://localhost:3306/dnote?serverTimezone=UTC";
     private static final String USER = "root";
     private static final String PASS = "0000";
     

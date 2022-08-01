@@ -45,10 +45,17 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="buttonClose" min="-2" max="-2" attributes="0"/>
-                  <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="55" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="buttonClose" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="buttonSave" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace min="0" pref="55" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -56,7 +63,10 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="buttonClose" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="buttonClose" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="buttonSave" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="26" max="32767" attributes="0"/>
@@ -110,9 +120,9 @@
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="FieldID5" min="-2" max="-2" attributes="0"/>
-                              <Component id="FieldID2" min="-2" max="-2" attributes="0"/>
-                              <Component id="FieldDescri" alignment="0" min="-2" pref="350" max="-2" attributes="0"/>
+                              <Component id="FieldEmpac" min="-2" max="-2" attributes="0"/>
+                              <Component id="FieldDesc" min="-2" max="-2" attributes="0"/>
+                              <Component id="FieldID" alignment="0" min="-2" pref="350" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
@@ -128,10 +138,11 @@
                               <Component id="FieldCodBarr" min="-2" max="-2" attributes="0"/>
                               <Component id="FieldICMS" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="FieldNCM" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Ativo" alignment="0" min="-2" pref="87" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace pref="95" max="32767" attributes="0"/>
+                  <EmptySpace pref="94" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -141,17 +152,17 @@
                   <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="LabelID" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="FieldDescri" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                      <Component id="FieldID" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="LabelDescri" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="FieldID2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="FieldDesc" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="LabelEmpacota" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="FieldID5" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="FieldEmpac" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -173,7 +184,8 @@
                       <Component id="LabelCodBarr" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="FieldCodBarr" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="55" max="32767" attributes="0"/>
+                  <EmptySpace pref="30" max="32767" attributes="0"/>
+                  <Component id="Ativo" min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -244,12 +256,10 @@
               <Dimension value="[350, 25]"/>
             </Property>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FieldICMSActionPerformed"/>
-          </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="FieldDescri">
+        <Component class="javax.swing.JTextField" name="FieldID">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[350, 25]"/>
             </Property>
@@ -258,10 +268,10 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FieldDescriActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FieldIDActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="FieldID2">
+        <Component class="javax.swing.JTextField" name="FieldDesc">
           <Properties>
             <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[350, 25]"/>
@@ -270,9 +280,6 @@
               <Dimension value="[350, 25]"/>
             </Property>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FieldID2ActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="FieldNCM">
           <Properties>
@@ -283,11 +290,8 @@
               <Dimension value="[350, 25]"/>
             </Property>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FieldNCMActionPerformed"/>
-          </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="FieldID5">
+        <Component class="javax.swing.JTextField" name="FieldEmpac">
           <Properties>
             <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[350, 25]"/>
@@ -297,9 +301,6 @@
               <Dimension value="[350, 25]"/>
             </Property>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FieldID5ActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="FieldPreco">
           <Properties>
@@ -310,9 +311,6 @@
               <Dimension value="[350, 25]"/>
             </Property>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FieldPrecoActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="FieldCodBarr">
           <Properties>
@@ -323,11 +321,21 @@
               <Dimension value="[350, 25]"/>
             </Property>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FieldCodBarrActionPerformed"/>
-          </Events>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="Ativo">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Ativo"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>
+    <Component class="javax.swing.JButton" name="buttonSave">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="SAVE"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonSaveActionPerformed"/>
+      </Events>
+    </Component>
   </SubComponents>
 </Form>
