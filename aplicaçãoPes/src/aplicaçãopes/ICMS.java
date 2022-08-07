@@ -9,5 +9,22 @@ package aplicaçãopes;
  * @author gusta
  */
 public class ICMS {
+    private int valor;
+
+    public ICMS(int valor) {
+        setValor(valor);
+    }
+    
+    public int getValor() {
+        return valor;
+    }
+
+    public void setValor(int valor) {
+        if(valor == 1){
+            this.valor = 101;
+        }else if(valor == 2){
+            this.valor = 500;
+        }
+    }
     
 }

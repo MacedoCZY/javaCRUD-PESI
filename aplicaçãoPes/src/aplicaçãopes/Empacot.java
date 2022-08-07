@@ -10,34 +10,35 @@ package aplicaçãopes;
  */
 public class Empacot {
     private int valSelect;
-    public String tipo;
 
     public Empacot(int valSelect) {
         this.valSelect = valSelect;
-        this.tipo = setEmpac(valSelect);
     }
 
-    public String getEmpac() {
-        return this.tipo;
+    public int getEmpac() {
+        return this.valSelect;
     }
-
-    public String setEmpac(int valSelect) {
+    
+    public void setEmpac(int valSelect) {
         this.valSelect = valSelect;
-        switch(valSelect){
+    }
+
+    public String getEmpacType() {
+        switch(this.valSelect){
             case 1:
-                return this.tipo = "KG";
+                return "KG";
             case 2:
-                return this.tipo = "UN";
+                return "UN";
             case 3:
-                return this.tipo = "MT";
+                return "MT";
             case 4:
-                return this.tipo = "MT2";
+                return "MT2";
             case 5:
-                return this.tipo= "MT3";
+                return "MT3";
             case 6:
-                return this.tipo = "PÇ";
+                return "PÇ";
             case 7:
-                return this.tipo = "PCT";
+                return "PCT";
         }
         return null ;
     }

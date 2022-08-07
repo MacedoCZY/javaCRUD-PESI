@@ -1,4 +1,4 @@
-/*
+ /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
@@ -11,14 +11,14 @@ package aplicaçãopes;
 public class Produto {
     private ICMS icms;
     private Empacot empacotamento;
-    private int NCM;
+    private String NCM;
     private int ID ;
     private String decri;
     private double preco;
     private String codBar;
     private boolean ative;
 
-    public Produto(ICMS icms, Empacot empacotamento, int NCM, int ID, String decri, double preco, String codBar, boolean ative) {
+    public Produto(ICMS icms, Empacot empacotamento, String NCM, int ID, String decri, double preco, String codBar, boolean ative) {
         this.icms = icms;
         this.empacotamento = empacotamento;
         this.NCM = NCM;
@@ -49,11 +49,11 @@ public class Produto {
         this.empacotamento = empacotamento;
     }
 
-    public int getNCM() {
+    public String getNCM() {
         return NCM;
     }
 
-    public void setNCM(int NCM) {
+    public void setNCM(String NCM) {
         this.NCM = NCM;
     }
 
@@ -84,9 +84,8 @@ public class Produto {
     public boolean isAtive() {
         return ative;
     }
-
+    
     public void setAtive(boolean ative) {
         this.ative = ative;
     }
-    
 }

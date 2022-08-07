@@ -9,7 +9,7 @@ package aplicaçãopes;
  * @author gusta
  */
 public class cadastroProduto extends javax.swing.JFrame {
-
+public static boolean control = false;
     /**
      * Creates new form cadastroProdutoJF
      */
@@ -36,24 +36,24 @@ public class cadastroProduto extends javax.swing.JFrame {
         LabelPreco = new javax.swing.JLabel();
         LabelEmpacota = new javax.swing.JLabel();
         LabelCodBarr = new javax.swing.JLabel();
-        FieldICMS = new javax.swing.JTextField();
         FieldID = new javax.swing.JTextField();
         FieldDesc = new javax.swing.JTextField();
         FieldNCM = new javax.swing.JTextField();
-        FieldEmpac = new javax.swing.JTextField();
         FieldPreco = new javax.swing.JTextField();
         FieldCodBarr = new javax.swing.JTextField();
         Ativo = new javax.swing.JCheckBox();
+        combBoxICMS = new javax.swing.JComboBox<>();
+        combBoxEMPAC = new javax.swing.JComboBox<>();
         buttonSave = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setLocation(new java.awt.Point(350, 135));
-        setMaximumSize(new java.awt.Dimension(800, 600));
-        setMinimumSize(new java.awt.Dimension(100, 100));
-        setPreferredSize(new java.awt.Dimension(620, 425));
+        setMaximumSize(new java.awt.Dimension(800, 450));
+        setMinimumSize(new java.awt.Dimension(800, 450));
+        setPreferredSize(new java.awt.Dimension(800, 450));
         setResizable(false);
-        setSize(new java.awt.Dimension(600, 400));
+        setSize(new java.awt.Dimension(800, 450));
 
         buttonClose.setText("CLOSE");
         buttonClose.addActionListener(new java.awt.event.ActionListener() {
@@ -88,9 +88,6 @@ public class cadastroProduto extends javax.swing.JFrame {
         LabelCodBarr.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         LabelCodBarr.setText("Código de Barras :");
 
-        FieldICMS.setMinimumSize(new java.awt.Dimension(350, 25));
-        FieldICMS.setPreferredSize(new java.awt.Dimension(350, 25));
-
         FieldID.setEditable(false);
         FieldID.setMinimumSize(new java.awt.Dimension(350, 25));
         FieldID.setPreferredSize(new java.awt.Dimension(350, 25));
@@ -106,10 +103,6 @@ public class cadastroProduto extends javax.swing.JFrame {
         FieldNCM.setMinimumSize(new java.awt.Dimension(350, 25));
         FieldNCM.setPreferredSize(new java.awt.Dimension(350, 25));
 
-        FieldEmpac.setMinimumSize(new java.awt.Dimension(350, 25));
-        FieldEmpac.setName(""); // NOI18N
-        FieldEmpac.setPreferredSize(new java.awt.Dimension(350, 25));
-
         FieldPreco.setMinimumSize(new java.awt.Dimension(350, 25));
         FieldPreco.setPreferredSize(new java.awt.Dimension(350, 25));
 
@@ -118,6 +111,26 @@ public class cadastroProduto extends javax.swing.JFrame {
 
         Ativo.setText("Ativo");
 
+        combBoxICMS.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione o ICMS", "100 -Tributada pelo Simples Nacional com permissão de crédito", "500 - ICMS cobrado anteriormente por substituição tributária (substituído) ou por antecipação " }));
+        combBoxICMS.setMaximumSize(new java.awt.Dimension(350, 25));
+        combBoxICMS.setMinimumSize(new java.awt.Dimension(350, 25));
+        combBoxICMS.setPreferredSize(new java.awt.Dimension(350, 25));
+        combBoxICMS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                combBoxICMSActionPerformed(evt);
+            }
+        });
+
+        combBoxEMPAC.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione o tipo de empacotamento", "KG", "UN", "MT", "MT²", "MT³", "PÇ", "PCT" }));
+        combBoxEMPAC.setMaximumSize(new java.awt.Dimension(350, 25));
+        combBoxEMPAC.setMinimumSize(new java.awt.Dimension(350, 25));
+        combBoxEMPAC.setPreferredSize(new java.awt.Dimension(350, 25));
+        combBoxEMPAC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                combBoxEMPACActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -125,33 +138,31 @@ public class cadastroProduto extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(LabelPreco)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FieldPreco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(LabelDescri)
-                            .addComponent(LabelEmpacota)
-                            .addComponent(LabelID))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(Ativo, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(FieldEmpac, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(FieldDesc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(FieldID, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(LabelCodBarr)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(LabelNCM)
-                                .addComponent(LabelICMS)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(LabelDescri)
+                                .addComponent(LabelEmpacota)
+                                .addComponent(LabelID)
+                                .addComponent(LabelPreco)
+                                .addComponent(LabelICMS)
+                                .addComponent(LabelNCM))
+                            .addComponent(LabelCodBarr))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(FieldCodBarr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(FieldICMS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(FieldNCM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Ativo, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(94, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(5, 5, 5)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(FieldDesc, javax.swing.GroupLayout.DEFAULT_SIZE, 537, Short.MAX_VALUE)
+                                    .addComponent(FieldPreco, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(FieldNCM, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(combBoxICMS, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(FieldCodBarr, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(FieldID, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(combBoxEMPAC, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -167,7 +178,7 @@ public class cadastroProduto extends javax.swing.JFrame {
                 .addGap(16, 16, 16)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LabelEmpacota)
-                    .addComponent(FieldEmpac, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(combBoxEMPAC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(16, 16, 16)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LabelPreco)
@@ -176,15 +187,15 @@ public class cadastroProduto extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LabelNCM)
                     .addComponent(FieldNCM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(16, 16, 16)
+                .addGap(17, 17, 17)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LabelICMS)
-                    .addComponent(FieldICMS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(16, 16, 16)
+                    .addComponent(combBoxICMS, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LabelCodBarr)
                     .addComponent(FieldCodBarr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addComponent(Ativo))
         );
 
@@ -201,15 +212,14 @@ public class cadastroProduto extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(12, 12, 12)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 55, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(buttonClose)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(buttonSave)
-                        .addGap(25, 25, 25))))
+                .addComponent(buttonClose)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 615, Short.MAX_VALUE)
+                .addComponent(buttonSave)
+                .addGap(25, 25, 25))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 710, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -220,7 +230,7 @@ public class cadastroProduto extends javax.swing.JFrame {
                     .addComponent(buttonSave))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(202, Short.MAX_VALUE))
         );
 
         pack();
@@ -237,14 +247,24 @@ public class cadastroProduto extends javax.swing.JFrame {
 
     private void buttonSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSaveActionPerformed
         // TODO add your handling code here:
-        FieldDesc.getText().toString();
-        FieldCodBarr.getText().toString();
-        Integer.valueOf(FieldEmpac.getText());
-        FieldICMS.getText();
-        FieldNCM.getText();
-        FieldPreco.getText();
-        Ativo.isEnabled(); 
+        ctrlCadProd control = new ctrlCadProd();
+        control.save(
+            combBoxICMS.getSelectedIndex(),
+            combBoxEMPAC.getSelectedIndex(),
+            FieldNCM.getText(),
+            FieldDesc.getText(),
+            Double.valueOf(FieldPreco.getText()),
+            FieldCodBarr.getText(),
+            Ativo.isEnabled());
     }//GEN-LAST:event_buttonSaveActionPerformed
+
+    private void combBoxICMSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combBoxICMSActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_combBoxICMSActionPerformed
+
+    private void combBoxEMPACActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combBoxEMPACActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_combBoxEMPACActionPerformed
 
     /**
      * @param args the command line arguments
@@ -283,14 +303,12 @@ public class cadastroProduto extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JCheckBox Ativo;
-    private javax.swing.JTextField FieldCodBarr;
-    private javax.swing.JTextField FieldDesc;
-    private javax.swing.JTextField FieldEmpac;
-    private javax.swing.JTextField FieldICMS;
-    private javax.swing.JTextField FieldID;
-    private javax.swing.JTextField FieldNCM;
-    private javax.swing.JTextField FieldPreco;
+    public javax.swing.JCheckBox Ativo;
+    public javax.swing.JTextField FieldCodBarr;
+    public javax.swing.JTextField FieldDesc;
+    public javax.swing.JTextField FieldID;
+    public javax.swing.JTextField FieldNCM;
+    public javax.swing.JTextField FieldPreco;
     private javax.swing.JLabel LabelCodBarr;
     private javax.swing.JLabel LabelDescri;
     private javax.swing.JLabel LabelEmpacota;
@@ -300,6 +318,8 @@ public class cadastroProduto extends javax.swing.JFrame {
     private javax.swing.JLabel LabelPreco;
     private javax.swing.JButton buttonClose;
     private javax.swing.JButton buttonSave;
+    public javax.swing.JComboBox<String> combBoxEMPAC;
+    public javax.swing.JComboBox<String> combBoxICMS;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
