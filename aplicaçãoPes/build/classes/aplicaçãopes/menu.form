@@ -114,7 +114,7 @@
       <SubComponents>
         <Component class="javax.swing.JButton" name="buttonViwProd">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Visualizar Produtos"/>
+            <Property name="text" type="java.lang.String" value="Produtos"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[250, 50]"/>
@@ -132,7 +132,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="buttonViwClient">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Visualizar Clientes"/>
+            <Property name="text" type="java.lang.String" value="Clientes"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[250, 50]"/>
@@ -150,7 +150,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="buttonViwRequests">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Visualizar Pedidos"/>
+            <Property name="text" type="java.lang.String" value="Pedidos"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[250, 50]"/>
@@ -168,7 +168,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="buttonViwEnterprise">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Visualizar Empresas"/>
+            <Property name="text" type="java.lang.String" value="Empresas"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[250, 50]"/>

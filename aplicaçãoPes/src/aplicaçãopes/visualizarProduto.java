@@ -9,7 +9,7 @@ package aplicaçãopes;
  * @author gusta
  */
 public class visualizarProduto extends javax.swing.JFrame {
-
+    public static cadastroProduto cadastroproduto;
     /**
      * Creates new form cadastroProdutoJF
      */
@@ -30,7 +30,7 @@ public class visualizarProduto extends javax.swing.JFrame {
         buttonCadProd = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jList2 = new javax.swing.JList<>();
+        jListListagem = new javax.swing.JList<>();
         buttonEditProd = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -58,12 +58,12 @@ public class visualizarProduto extends javax.swing.JFrame {
 
         jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jList2.setModel(new javax.swing.AbstractListModel<String>() {
+        jListListagem.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane2.setViewportView(jList2);
+        jScrollPane2.setViewportView(jListListagem);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -131,7 +131,8 @@ public class visualizarProduto extends javax.swing.JFrame {
 
     private void buttonCadProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCadProdActionPerformed
         // TODO add your handling code here:
-        new cadastroProduto().setVisible(true);
+        cadastroproduto = new cadastroProduto();
+        cadastroproduto.setVisible(true);
     }//GEN-LAST:event_buttonCadProdActionPerformed
 
     private void buttonEditProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonEditProdActionPerformed
@@ -178,7 +179,7 @@ public class visualizarProduto extends javax.swing.JFrame {
     private javax.swing.JButton buttonCadProd;
     private javax.swing.JButton buttonEditProd;
     private javax.swing.JButton buttonHome;
-    private javax.swing.JList<String> jList2;
+    public javax.swing.JList<String> jListListagem;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables

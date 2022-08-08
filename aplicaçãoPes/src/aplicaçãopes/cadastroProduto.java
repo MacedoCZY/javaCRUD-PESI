@@ -21,7 +21,6 @@ import javax.swing.JOptionPane;
  * @author gusta
  */
 public class cadastroProduto extends javax.swing.JFrame {
-public static boolean control = false;
     /**
      * Creates new form cadastroProdutoJF
      */
@@ -279,26 +278,17 @@ public static boolean control = false;
 
     private void buttonSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSaveActionPerformed
         // TODO add your handling code here:
-        ctrlCadProd control = new ctrlCadProd();
-        if((combBoxICMS.getSelectedIndex() > 0)  &&
-                (combBoxEMPAC.getSelectedIndex() > 0) &&
-                (FieldNCM.getText() != null) &&
-                (FieldDesc.getText() != null) &&
-                (FieldPreco.getText() != null) &&
-                (FieldCodBarr.getText() != null)){
-            control.save(
-                lastId,
-                combBoxICMS.getSelectedIndex(),
-                combBoxEMPAC.getSelectedIndex(),
-                FieldNCM.getText(),
-                FieldDesc.getText(),
-                Double.valueOf(FieldPreco.getText()),
-                FieldCodBarr.getText(),
-                Ativo.isEnabled());
-        }else{
-            JFrame jFrame = new JFrame();
-            JOptionPane.showMessageDialog(jFrame, "Erro ao preencher, ferifique e tente novamente.");
-        }
+        ctrlCadProd control = new ctrlCadProd(AplicaçãoPes.Menu.visualizarproduto.cadastroproduto);
+        control.save(
+            lastId,
+            combBoxICMS.getSelectedIndex(),
+            combBoxEMPAC.getSelectedIndex(),
+            FieldNCM.getText(),
+            FieldDesc.getText(),
+            FieldPreco.getText(),
+            FieldCodBarr.getText(),
+            Ativo.isEnabled());
+
     }//GEN-LAST:event_buttonSaveActionPerformed
 
     private void combBoxICMSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combBoxICMSActionPerformed

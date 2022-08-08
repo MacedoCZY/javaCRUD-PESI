@@ -9,7 +9,7 @@ package aplicaçãopes;
  * @author gusta
  */
 public class menu extends javax.swing.JFrame {
-
+    public static visualizarProduto visualizarproduto;
     /**
      * Creates new form menu
      */
@@ -46,7 +46,7 @@ public class menu extends javax.swing.JFrame {
         jPanel1.setMinimumSize(new java.awt.Dimension(600, 400));
         jPanel1.setPreferredSize(new java.awt.Dimension(600, 400));
 
-        buttonViwProd.setText("Visualizar Produtos");
+        buttonViwProd.setText("Produtos");
         buttonViwProd.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         buttonViwProd.setMaximumSize(new java.awt.Dimension(250, 50));
         buttonViwProd.setMinimumSize(new java.awt.Dimension(250, 50));
@@ -57,7 +57,7 @@ public class menu extends javax.swing.JFrame {
             }
         });
 
-        buttonViwClient.setText("Visualizar Clientes");
+        buttonViwClient.setText("Clientes");
         buttonViwClient.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         buttonViwClient.setMaximumSize(new java.awt.Dimension(250, 50));
         buttonViwClient.setMinimumSize(new java.awt.Dimension(250, 50));
@@ -68,7 +68,7 @@ public class menu extends javax.swing.JFrame {
             }
         });
 
-        buttonViwRequests.setText("Visualizar Pedidos");
+        buttonViwRequests.setText("Pedidos");
         buttonViwRequests.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         buttonViwRequests.setMaximumSize(new java.awt.Dimension(250, 50));
         buttonViwRequests.setMinimumSize(new java.awt.Dimension(250, 50));
@@ -79,7 +79,7 @@ public class menu extends javax.swing.JFrame {
             }
         });
 
-        buttonViwEnterprise.setText("Visualizar Empresas");
+        buttonViwEnterprise.setText("Empresas");
         buttonViwEnterprise.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         buttonViwEnterprise.setMaximumSize(new java.awt.Dimension(250, 50));
         buttonViwEnterprise.setMinimumSize(new java.awt.Dimension(250, 50));
@@ -147,7 +147,8 @@ public class menu extends javax.swing.JFrame {
 
     private void buttonViwProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonViwProdActionPerformed
         // TODO add your handling code here:
-        new visualizarProduto().setVisible(true);
+        visualizarproduto = new visualizarProduto();
+        visualizarproduto.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_buttonViwProdActionPerformed
 

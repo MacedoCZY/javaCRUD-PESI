@@ -10,7 +10,7 @@ import aplicaçãopes.ctrlCadProd;
  * @author gusta
  */
 public class AplicaçãoPes {
-
+    public static menu Menu;
     /**
      * @param args the command line arguments
      */
@@ -42,7 +42,8 @@ public class AplicaçãoPes {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new menu().setVisible(true);
+                Menu = new menu();
+                Menu.setVisible(true);
             }
         });
     }
