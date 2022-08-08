@@ -48,7 +48,7 @@ public class ctrlViewProd {
                     }
                 }
             }catch (Exception e){
-                System.out.println("Erro ctrçViewProd bd");
+                System.out.println("Erro ctrlViewProd bd");
             }
         }
     public ctrlViewProd(listagemProduto listagemproduto, viewProd viewprod){
