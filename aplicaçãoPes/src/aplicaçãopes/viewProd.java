@@ -24,10 +24,8 @@ public class viewProd extends javax.swing.JFrame {
     public static listagemProduto listagemproduto;
     public static ctrlViewProd ctrlviewprod;
     
-    public viewProd(listagemProduto listagemproduto) {
+    public viewProd() {
         initComponents();
-        ctrlviewprod = new ctrlViewProd(listagemproduto, listagemproduto.viewprod);
-        ctrlviewprod.show();
     }
     
     /**

@@ -19,7 +19,7 @@ public class ctrlViewProd {
         public static viewProd viewprod;
         
         public void show(){
-            listagemproduto.jListListagem.getSelectedIndex();
+            int idSelect = listagemproduto.jListListagem.getSelectedIndex()+1;
             Connection conn = null;
             PreparedStatement pstm = null;
             ResultSet rs = null; 
@@ -27,17 +27,28 @@ public class ctrlViewProd {
                 conn = connectFactory.getConnection();
                 pstm = conn.prepareStatement("SELECT id, descri, NCM, ICMS, preco, empac, codBar, ativo FROM Prod");
                 rs = pstm.executeQuery();
-
-                viewprod.FieldID.setText(rs.getString("id"));
-                viewprod.FieldDesc.setText(rs.getString("descri"));
-                viewprod.FieldNCM.setText(rs.getString("NCM"));
-                viewprod.combBoxICMS.setSelectedIndex(Integer.valueOf(rs.getString("ICMS")));
-                viewprod.FieldPreco.setText(rs.getString("preco"));
-                viewprod.combBoxEMPAC.setSelectedIndex(Integer.valueOf(rs.getString("empac")));
-                viewprod.FieldCodBarr.setText(rs.getString("codBar"));
-                viewprod.Ativo.setSelected(Boolean.valueOf(rs.getString("ativo")));
+                rs.next();
+                while(true){
+                    if((Integer.valueOf(rs.getString("id")) == idSelect)){
+                        viewprod.FieldID.setText(rs.getString("id"));
+                        viewprod.FieldDesc.setText(rs.getString("descri"));
+                        viewprod.FieldNCM.setText(rs.getString("NCM"));
+                        if(Integer.valueOf(rs.getString("ICMS"))==101){
+                            viewprod.combBoxICMS.setSelectedIndex(1);
+                        }else{
+                            viewprod.combBoxICMS.setSelectedIndex(2);
+                        }
+                        viewprod.FieldPreco.setText(rs.getString("preco"));
+                        viewprod.combBoxEMPAC.setSelectedIndex(Integer.valueOf(rs.getString("empac")));
+                        viewprod.FieldCodBarr.setText(rs.getString("codBar"));
+                        viewprod.Ativo.setSelected(Boolean.valueOf(rs.getString("ativo")));
+                        break;
+                    }else{
+                        rs.next();
+                    }
+                }
             }catch (Exception e){
-                System.out.println("Erro 404 not a found");
+                System.out.println("Erro 405 not a found");
             }
         }
     public ctrlViewProd(listagemProduto listagemproduto, viewProd viewprod){

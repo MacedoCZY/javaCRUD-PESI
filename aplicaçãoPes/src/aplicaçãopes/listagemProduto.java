@@ -150,7 +150,9 @@ public class listagemProduto extends javax.swing.JFrame {
 
     private void buttonViewProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonViewProdActionPerformed
         // TODO add your handling code here:
-        viewprod = new viewProd(AplicaçãoPes.Menu.listagemproduto);
+        viewprod = new viewProd();
+        ctrlViewProd ctrlviewprod = new ctrlViewProd(AplicaçãoPes.Menu.listagemproduto, AplicaçãoPes.Menu.listagemproduto.viewprod);
+        ctrlviewprod.show();
         viewprod.setVisible(true);
     }//GEN-LAST:event_buttonViewProdActionPerformed
 
