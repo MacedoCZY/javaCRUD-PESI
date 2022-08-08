@@ -4,6 +4,18 @@
  */
 package aplicaçãopes;
 
+import com.mysql.cj.xdevapi.Statement;
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import java.sql.DriverManager;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author gusta
@@ -13,8 +25,22 @@ public static boolean control = false;
     /**
      * Creates new form cadastroProdutoJF
      */
+    public int lastId = 0;
     public cadastroProduto() {
         initComponents();
+        Connection conn = null;
+        PreparedStatement pstm = null;
+        ResultSet rs = null;
+        try{ 
+            conn = connectFactory.getConnection();
+            pstm = conn.prepareStatement("SELECT max(id) FROM Prod");
+            rs = pstm.executeQuery();
+            rs.next();
+            lastId = rs.getInt(1);
+            lastId++;
+        }catch (Exception e){
+        }
+        FieldID.setText(String.valueOf(lastId));
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
     }
 
@@ -99,6 +125,11 @@ public static boolean control = false;
 
         FieldDesc.setMinimumSize(new java.awt.Dimension(350, 25));
         FieldDesc.setPreferredSize(new java.awt.Dimension(350, 25));
+        FieldDesc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FieldDescActionPerformed(evt);
+            }
+        });
 
         FieldNCM.setMinimumSize(new java.awt.Dimension(350, 25));
         FieldNCM.setPreferredSize(new java.awt.Dimension(350, 25));
@@ -230,7 +261,7 @@ public static boolean control = false;
                     .addComponent(buttonSave))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(202, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         pack();
@@ -243,19 +274,31 @@ public static boolean control = false;
 
     private void FieldIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FieldIDActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_FieldIDActionPerformed
 
     private void buttonSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSaveActionPerformed
         // TODO add your handling code here:
         ctrlCadProd control = new ctrlCadProd();
-        control.save(
-            combBoxICMS.getSelectedIndex(),
-            combBoxEMPAC.getSelectedIndex(),
-            FieldNCM.getText(),
-            FieldDesc.getText(),
-            Double.valueOf(FieldPreco.getText()),
-            FieldCodBarr.getText(),
-            Ativo.isEnabled());
+        if((combBoxICMS.getSelectedIndex() > 0)  &&
+                (combBoxEMPAC.getSelectedIndex() > 0) &&
+                (FieldNCM.getText() != null) &&
+                (FieldDesc.getText() != null) &&
+                (FieldPreco.getText() != null) &&
+                (FieldCodBarr.getText() != null)){
+            control.save(
+                lastId,
+                combBoxICMS.getSelectedIndex(),
+                combBoxEMPAC.getSelectedIndex(),
+                FieldNCM.getText(),
+                FieldDesc.getText(),
+                Double.valueOf(FieldPreco.getText()),
+                FieldCodBarr.getText(),
+                Ativo.isEnabled());
+        }else{
+            JFrame jFrame = new JFrame();
+            JOptionPane.showMessageDialog(jFrame, "Erro ao preencher, ferifique e tente novamente.");
+        }
     }//GEN-LAST:event_buttonSaveActionPerformed
 
     private void combBoxICMSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combBoxICMSActionPerformed
@@ -265,6 +308,10 @@ public static boolean control = false;
     private void combBoxEMPACActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combBoxEMPACActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_combBoxEMPACActionPerformed
+
+    private void FieldDescActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FieldDescActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FieldDescActionPerformed
 
     /**
      * @param args the command line arguments

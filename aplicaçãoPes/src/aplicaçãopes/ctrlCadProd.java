@@ -17,46 +17,24 @@ import java.sql.DriverManager;
  * @author gusta
  */
 public class ctrlCadProd {
-    public int lastId = 0;
-    public void save(int icms, int empacotament, String NCM, String decri, double preco, String codBar, boolean ative){
+    public void save(int id, int icms, int empacotament, String NCM, String decri, double preco, String codBar, boolean ative){
         
         ICMS icm = new ICMS(icms);
         Empacot empac = new Empacot(empacotament);
         
         
-        Produto produto = new Produto(icm, empac, NCM, lastId, decri, preco, codBar, ative);
+        Produto produto = new Produto(icm, empac, NCM, id, decri, preco, codBar, ative);
         
         Connection conn = null;
         PreparedStatement pstm = null;
-        String sql = "INSERT INTO Prod(descri, NCM, ICMS, preco, empac, codBar, ativo)" 
-                + " VALUES(?,?,?,?,?,?,?)";
-        /*
-        try{
-            PreparedStatement pstm1 = null;
-            String sql1 = "SELECT max(id) FROM Prod";
-            //Cria uma conexão com o banco
-            conn = connectFactory.getConnection();
-
-            //Cria um PreparedStatment, classe usada para executar a query
-            pstm1 = conn.prepareStatement(sql1, PreparedStatement.RETURN_GENERATED_KEYS);
-            
-            pstm1.executeUpdate();
-            
-            ResultSet rs = pstm1.getGeneratedKeys();
-            
-            if(rs.next()){
-                lastId = rs.getInt(1);
-                System.out.println(lastId);
-            }else System.out.println("cu");
-            
-        }catch (Exception e) {
+        String sql = "INSERT INTO Prod(descri, NCM, ICMS, preco, empac, codBar, ativo, id)" 
+                + " VALUES(?,?,?,?,?,?,?, ?)";
         
-        }*/
         try {
             //Cria uma conexão com o banco
             conn = connectFactory.getConnection();
             //Cria um PreparedStatment, classe usada para executar a query
-            pstm = conn.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
+            pstm = conn.prepareStatement(sql);
             
             pstm.setInt(3, icm.getValor());
             
@@ -72,15 +50,10 @@ public class ctrlCadProd {
             
             pstm.setBoolean(7, produto.isAtive());
             
-            pstm.executeUpdate();
+            pstm.setInt(8, produto.getID());
             
-            ResultSet rs = pstm.getGeneratedKeys();
-            
-            if(rs.next()){
-                lastId = rs.getInt(1);
-                System.out.println(lastId);
-            }else System.out.println("cu");
-            
+            pstm.execute();    
+         
         } catch (Exception e) {
 
             e.printStackTrace();
