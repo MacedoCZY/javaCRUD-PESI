@@ -14,6 +14,8 @@ import java.util.List;
 import java.sql.DriverManager;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
+import javax.swing.JComboBox;
 /**
  *
  * @author gusta
@@ -61,7 +63,6 @@ public class ctrlCadProd {
         
         ICMS icm = new ICMS(icms);
         Empacot empac = new Empacot(empacotament);
-        cadastroProduto cad = new cadastroProduto();
         
         if(testarDad(icms, empacotament, NCM, decri, preco, codBar) == 0){
             Produto produto = new Produto(icm, empac, NCM, id, decri, Double.valueOf(preco), codBar, ative);
@@ -99,7 +100,15 @@ public class ctrlCadProd {
                 e.printStackTrace();
                 }finally{
             }
-            
+            JFrame jFrame = new JFrame();
+            JOptionPane.showMessageDialog(jFrame, "Produto adicionado com sucesso!");
+            cad.FieldPreco.setText(null);
+            cad.FieldNCM.setText(null);
+            cad.FieldDesc.setText(null);
+            cad.FieldCodBarr.setText(null);
+            cad.combBoxEMPAC.setSelectedIndex(0);
+            cad.combBoxICMS.setSelectedIndex(0);
+            AplicaçãoPes.Menu.listagemproduto.cadastroproduto.atualizaId();
         }
     }
     public ctrlCadProd(cadastroProduto cad) {

@@ -27,6 +27,10 @@ public class cadastroProduto extends javax.swing.JFrame {
     public int lastId = 0;
     public cadastroProduto() {
         initComponents();
+        atualizaId();
+    }
+
+    public void atualizaId(){
         Connection conn = null;
         PreparedStatement pstm = null;
         ResultSet rs = null;
@@ -42,7 +46,7 @@ public class cadastroProduto extends javax.swing.JFrame {
         FieldID.setText(String.valueOf(lastId));
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

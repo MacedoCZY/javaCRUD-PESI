@@ -148,6 +148,8 @@ public class menu extends javax.swing.JFrame {
     private void buttonViwProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonViwProdActionPerformed
         // TODO add your handling code here:
         listagemproduto = new listagemProduto();
+        ctrlListProd list = new ctrlListProd(AplicaçãoPes.Menu.listagemproduto);
+        list.listar();
         listagemproduto.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_buttonViwProdActionPerformed

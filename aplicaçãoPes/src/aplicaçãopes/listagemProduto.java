@@ -15,10 +15,8 @@ public class listagemProduto extends javax.swing.JFrame {
      */
     public listagemProduto() {
         initComponents();
-        ctrlListProd list = new ctrlListProd(AplicaçãoPes.Menu.listagemproduto);
-        list.listar();
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -31,7 +29,7 @@ public class listagemProduto extends javax.swing.JFrame {
         buttonHome = new javax.swing.JButton();
         buttonCadProd = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
+        jScrollPane1 = new javax.swing.JScrollPane();
         jListListagem = new javax.swing.JList<>();
         buttonEditProd = new javax.swing.JButton();
 
@@ -60,8 +58,7 @@ public class listagemProduto extends javax.swing.JFrame {
 
         jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jListListagem.setToolTipText("");
-        jScrollPane2.setViewportView(jListListagem);
+        jScrollPane1.setViewportView(jListListagem);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -69,14 +66,14 @@ public class listagemProduto extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 725, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 725, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 510, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 510, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -143,6 +140,6 @@ public class listagemProduto extends javax.swing.JFrame {
     private javax.swing.JButton buttonHome;
     public javax.swing.JList<String> jListListagem;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
