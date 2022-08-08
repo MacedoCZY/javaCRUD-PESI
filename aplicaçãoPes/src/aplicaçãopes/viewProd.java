@@ -243,6 +243,7 @@ public class viewProd extends javax.swing.JFrame {
 
     private void buttonCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCloseActionPerformed
         // TODO add your handling code here:
+        this.dispose();
     }//GEN-LAST:event_buttonCloseActionPerformed
 
     private void FieldIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FieldIDActionPerformed

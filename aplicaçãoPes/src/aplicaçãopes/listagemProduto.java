@@ -16,6 +16,7 @@ public class listagemProduto extends javax.swing.JFrame {
      */
     public listagemProduto() {
         initComponents();
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
     }
 
     /**

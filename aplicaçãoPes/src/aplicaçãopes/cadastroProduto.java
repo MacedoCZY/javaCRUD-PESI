@@ -28,6 +28,7 @@ public class cadastroProduto extends javax.swing.JFrame {
     public cadastroProduto() {
         initComponents();
         atualizaId();
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
     }
 
     public void atualizaId(){
@@ -44,7 +45,6 @@ public class cadastroProduto extends javax.swing.JFrame {
         }catch (Exception e){
         }
         FieldID.setText(String.valueOf(lastId));
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
     }
     
     /**

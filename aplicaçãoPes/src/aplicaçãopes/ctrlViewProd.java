@@ -48,7 +48,7 @@ public class ctrlViewProd {
                     }
                 }
             }catch (Exception e){
-                System.out.println("Erro 405 not a found");
+                System.out.println("Erro ctrçViewProd bd");
             }
         }
     public ctrlViewProd(listagemProduto listagemproduto, viewProd viewprod){
