@@ -38,8 +38,7 @@ public class ctrlListProd {
                 String geral;
                 for(int i = id.length(); i < 8 ;i++){
                     id += " ";
-                }
-                for(int i = descri.length(); i < 40 ;i++){
+                }for(int i = descri.length(); i < 40 ;i++){
                     descri += " ";
                 }for(int i = NCM.length(); i < 16 ;i++){
                     NCM += " ";

@@ -10,6 +10,7 @@ package aplicaçãopes;
  */
 public class listagemProduto extends javax.swing.JFrame {
     public static cadastroProduto cadastroproduto;
+    public static viewProd viewprod;
     /**
      * Creates new form cadastroProdutoJF
      */
@@ -32,6 +33,7 @@ public class listagemProduto extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jListListagem = new javax.swing.JList<>();
         buttonEditProd = new javax.swing.JButton();
+        buttonViewProd = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(228, 32));
@@ -86,6 +88,15 @@ public class listagemProduto extends javax.swing.JFrame {
             }
         });
 
+        buttonViewProd.setText("Visualizar Produto");
+        buttonViewProd.setBorderPainted(false);
+        buttonViewProd.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        buttonViewProd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonViewProdActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -96,10 +107,12 @@ public class listagemProduto extends javax.swing.JFrame {
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(buttonHome)
-                        .addGap(33, 33, 33)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(buttonCadProd)
-                        .addGap(33, 33, 33)
-                        .addComponent(buttonEditProd)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(buttonEditProd)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(buttonViewProd)))
                 .addContainerGap(26, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -109,7 +122,8 @@ public class listagemProduto extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(buttonHome)
                     .addComponent(buttonCadProd)
-                    .addComponent(buttonEditProd))
+                    .addComponent(buttonEditProd)
+                    .addComponent(buttonViewProd))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -134,10 +148,17 @@ public class listagemProduto extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_buttonEditProdActionPerformed
 
+    private void buttonViewProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonViewProdActionPerformed
+        // TODO add your handling code here:
+        viewprod = new viewProd(AplicaçãoPes.Menu.listagemproduto);
+        viewprod.setVisible(true);
+    }//GEN-LAST:event_buttonViewProdActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonCadProd;
     private javax.swing.JButton buttonEditProd;
     private javax.swing.JButton buttonHome;
+    public javax.swing.JButton buttonViewProd;
     public javax.swing.JList<String> jListListagem;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
