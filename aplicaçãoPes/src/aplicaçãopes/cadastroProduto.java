@@ -278,7 +278,7 @@ public class cadastroProduto extends javax.swing.JFrame {
 
     private void buttonSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSaveActionPerformed
         // TODO add your handling code here:
-        ctrlCadProd control = new ctrlCadProd(AplicaçãoPes.Menu.visualizarproduto.cadastroproduto);
+        ctrlCadProd control = new ctrlCadProd(AplicaçãoPes.Menu.listagemproduto.cadastroproduto);
         control.save(
             lastId,
             combBoxICMS.getSelectedIndex(),

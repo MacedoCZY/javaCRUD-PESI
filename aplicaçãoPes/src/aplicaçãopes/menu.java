@@ -9,7 +9,7 @@ package aplicaçãopes;
  * @author gusta
  */
 public class menu extends javax.swing.JFrame {
-    public static visualizarProduto visualizarproduto;
+    public static listagemProduto listagemproduto;
     /**
      * Creates new form menu
      */
@@ -147,8 +147,8 @@ public class menu extends javax.swing.JFrame {
 
     private void buttonViwProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonViwProdActionPerformed
         // TODO add your handling code here:
-        visualizarproduto = new visualizarProduto();
-        visualizarproduto.setVisible(true);
+        listagemproduto = new listagemProduto();
+        listagemproduto.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_buttonViwProdActionPerformed
 
