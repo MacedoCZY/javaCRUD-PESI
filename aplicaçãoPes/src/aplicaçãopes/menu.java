@@ -36,9 +36,7 @@ public class menu extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setFocusable(false);
         setLocation(new java.awt.Point(228, 32));
-        setMaximumSize(new java.awt.Dimension(1280, 720));
         setMinimumSize(new java.awt.Dimension(800, 600));
-        setPreferredSize(new java.awt.Dimension(800, 600));
         setSize(new java.awt.Dimension(800, 600));
 
         jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -148,10 +146,9 @@ public class menu extends javax.swing.JFrame {
     private void buttonViwProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonViwProdActionPerformed
         // TODO add your handling code here:
         listagemproduto = new listagemProduto();
-        ctrlListProd list = new ctrlListProd(AplicaçãoPes.Menu.listagemproduto);
-        list.listar();
+        listagemproduto.list();
         listagemproduto.setVisible(true);
-        this.dispose();
+        AplicaçãoPes.Menu.dispose();
     }//GEN-LAST:event_buttonViwProdActionPerformed
 
     private void buttonViwClientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonViwClientActionPerformed

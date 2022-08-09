@@ -41,7 +41,11 @@ public class ctrlViewProd {
                         viewprod.FieldPreco.setText(rs.getString("preco"));
                         viewprod.combBoxEMPAC.setSelectedIndex(Integer.valueOf(rs.getString("empac")));
                         viewprod.FieldCodBarr.setText(rs.getString("codBar"));
-                        viewprod.Ativo.setSelected(Boolean.valueOf(rs.getString("ativo")));
+                        boolean aj = false;
+                        if(Integer.valueOf(rs.getString("ativo"))==0){
+                            aj = false;
+                        }else{aj = true;}
+                        viewprod.Ativo.setSelected(aj);
                         break;
                     }else{
                         rs.next();

@@ -36,33 +36,31 @@ public class ctrlListProd {
                 String empac = emp.getEmpacType();
                 String codBar = rs.getString("codBar");
                 String ativo = rs.getString("ativo");
-                String geral;
-                for(int i = id.length(); i <= 8 ;i++){
+
+                for(int i = id.length()+4; i <= 12 ;i++){
                     id += " ";
-                }for(int i = descri.length(); i <= 24 ;i++){
+                }for(int i = descri.length()+8; i <= 32 ;i++){
                     descri += " ";
-                }for(int i = NCM.length(); i <= 16 ;i++){
+                }for(int i = NCM.length(); i <= 21 ;i++){
                     NCM += " ";
-                }for(int i = ICMS.length(); i <= 8 ;i++){
+                }for(int i = ICMS.length()+6; i <= 14 ;i++){
                     ICMS += " ";
-                }for(int i = preco.length(); i <= 16 ;i++){
+                }for(int i = preco.length()+7; i <= 23 ;i++){
                     preco += " ";
-                }for(int i = empac.length(); i <= 8 ;i++){
+                }for(int i = empac.length()+9; i <= 17 ;i++){
                     empac += " ";
-                }for(int i = codBar.length(); i <= 32 ;i++){
+                }for(int i = codBar.length()+12; i <= 44 ;i++){
                     codBar += " ";
-                }for(int i = ativo.length(); i <= 2 ;i++){
-                    ativo += " ";
                 }
                 
-                geral = "ID: "+String.valueOf(id)+
-                        "Descri: "+String.valueOf(descri)+
-                        "NCM: "+String.valueOf(NCM)+
-                        "ICMS: "+String.valueOf(ICMS)+
-                        "Preço: "+String.valueOf(preco)+
-                        "Empacot: "+String.valueOf(empac)+
-                        "Codigo Bar: "+String.valueOf(codBar)+
-                        "Ativo: "+String.valueOf(ativo);
+                String geral = "ID: "+id+
+                        "Descri: "+descri+
+                        "NCM: "+NCM+
+                        "ICMS: "+ICMS+
+                        "Preço: "+preco+
+                        "Empacot: "+empac+
+                        "Codigo Bar: "+codBar+
+                        "Ativo: "+ativo;
                 model.addElement(geral);
                 listag.jListListagem.setModel(model);
             }

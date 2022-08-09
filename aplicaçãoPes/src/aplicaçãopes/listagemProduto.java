@@ -11,6 +11,9 @@ package aplicaçãopes;
 public class listagemProduto extends javax.swing.JFrame {
     public static cadastroProduto cadastroproduto;
     public static viewProd viewprod;
+    public static editProd editprod;
+    public static menu menu;
+    public static listagemProduto listagemproduto;
     /**
      * Creates new form cadastroProdutoJF
      */
@@ -18,7 +21,11 @@ public class listagemProduto extends javax.swing.JFrame {
         initComponents();
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
     }
-
+    
+    public void list(){
+        ctrlListProd list = new ctrlListProd(AplicaçãoPes.Menu.listagemproduto);
+        list.listar();
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -61,6 +68,7 @@ public class listagemProduto extends javax.swing.JFrame {
 
         jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
+        jListListagem.setFont(new java.awt.Font("Lucida Sans Typewriter", 0, 12)); // NOI18N
         jScrollPane1.setViewportView(jListListagem);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -142,11 +150,16 @@ public class listagemProduto extends javax.swing.JFrame {
     private void buttonCadProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCadProdActionPerformed
         // TODO add your handling code here:
         cadastroproduto = new cadastroProduto();
+        list();
         cadastroproduto.setVisible(true);
     }//GEN-LAST:event_buttonCadProdActionPerformed
 
     private void buttonEditProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonEditProdActionPerformed
         // TODO add your handling code here:
+        editprod = new editProd();
+        ctrlEditProd ctrlviewprod = new ctrlEditProd(AplicaçãoPes.Menu.listagemproduto, AplicaçãoPes.Menu.listagemproduto.editprod);
+        ctrlviewprod.show();
+        editprod.setVisible(true);
     }//GEN-LAST:event_buttonEditProdActionPerformed
 
     private void buttonViewProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonViewProdActionPerformed

@@ -4,34 +4,27 @@
  */
 package aplicaçãopes;
 
-import com.mysql.cj.xdevapi.Statement;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-import java.sql.DriverManager;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
+
 
 /**
  *
  * @author gusta
  */
-public class viewProd extends javax.swing.JFrame {
+public class editProd extends javax.swing.JFrame {
     public static listagemProduto listagemproduto;
-    public static ctrlViewProd ctrlviewprod;
-    
-    public viewProd() {
+    public static viewProd viewprod;
+    public static ctrlEditProd ctrleditprod;
+            
+    public int lastId = 0;
+    public editProd() {
         initComponents();
-        combBoxICMS.setEnabled(false);
-        combBoxEMPAC.setEnabled(false);
-        Ativo.setEnabled(false);
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
     }
     
+ 
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -58,6 +51,7 @@ public class viewProd extends javax.swing.JFrame {
         Ativo = new javax.swing.JCheckBox();
         combBoxICMS = new javax.swing.JComboBox<>();
         combBoxEMPAC = new javax.swing.JComboBox<>();
+        buttonSave = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -108,7 +102,6 @@ public class viewProd extends javax.swing.JFrame {
             }
         });
 
-        FieldDesc.setEditable(false);
         FieldDesc.setMinimumSize(new java.awt.Dimension(350, 25));
         FieldDesc.setPreferredSize(new java.awt.Dimension(350, 25));
         FieldDesc.addActionListener(new java.awt.event.ActionListener() {
@@ -117,15 +110,12 @@ public class viewProd extends javax.swing.JFrame {
             }
         });
 
-        FieldNCM.setEditable(false);
         FieldNCM.setMinimumSize(new java.awt.Dimension(350, 25));
         FieldNCM.setPreferredSize(new java.awt.Dimension(350, 25));
 
-        FieldPreco.setEditable(false);
         FieldPreco.setMinimumSize(new java.awt.Dimension(350, 25));
         FieldPreco.setPreferredSize(new java.awt.Dimension(350, 25));
 
-        FieldCodBarr.setEditable(false);
         FieldCodBarr.setMinimumSize(new java.awt.Dimension(350, 25));
         FieldCodBarr.setPreferredSize(new java.awt.Dimension(350, 25));
 
@@ -182,7 +172,7 @@ public class viewProd extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(combBoxEMPAC, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -219,6 +209,13 @@ public class viewProd extends javax.swing.JFrame {
                 .addComponent(Ativo))
         );
 
+        buttonSave.setText("CONFIRMAR");
+        buttonSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSaveActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -226,7 +223,9 @@ public class viewProd extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(12, 12, 12)
                 .addComponent(buttonClose)
-                .addGap(25, 701, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 573, Short.MAX_VALUE)
+                .addComponent(buttonSave)
+                .addGap(25, 25, 25))
             .addGroup(layout.createSequentialGroup()
                 .addGap(32, 32, 32)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 710, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -236,7 +235,9 @@ public class viewProd extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(buttonClose)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonClose)
+                    .addComponent(buttonSave))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(20, Short.MAX_VALUE))
@@ -247,12 +248,27 @@ public class viewProd extends javax.swing.JFrame {
 
     private void buttonCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCloseActionPerformed
         // TODO add your handling code here:
-        AplicaçãoPes.Menu.listagemproduto.viewprod.dispose();
+        AplicaçãoPes.Menu.listagemproduto.editprod.dispose();
     }//GEN-LAST:event_buttonCloseActionPerformed
 
     private void FieldIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FieldIDActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_FieldIDActionPerformed
+
+    private void buttonSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSaveActionPerformed
+        // TODO add your handling code here:
+        ctrlEditProd ctrleditprod = new ctrlEditProd(AplicaçãoPes.Menu.listagemproduto, AplicaçãoPes.Menu.listagemproduto.editprod);
+        ctrleditprod.update(
+            lastId,
+            combBoxICMS.getSelectedIndex(),
+            combBoxEMPAC.getSelectedIndex(),
+            FieldNCM.getText(),
+            FieldDesc.getText(),
+            FieldPreco.getText(),
+            FieldCodBarr.getText(),
+            Ativo.isSelected());
+        AplicaçãoPes.Menu.listagemproduto.list();
+    }//GEN-LAST:event_buttonSaveActionPerformed
 
     private void combBoxICMSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combBoxICMSActionPerformed
         // TODO add your handling code here:
@@ -281,6 +297,7 @@ public class viewProd extends javax.swing.JFrame {
     private javax.swing.JLabel LabelNCM;
     private javax.swing.JLabel LabelPreco;
     private javax.swing.JButton buttonClose;
+    private javax.swing.JButton buttonSave;
     public javax.swing.JComboBox<String> combBoxEMPAC;
     public javax.swing.JComboBox<String> combBoxICMS;
     private javax.swing.JPanel jPanel1;
