@@ -3,8 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package aplicaçãopes;
+import folderBoundery.menu;
 import aplicaçãopes.connectFactory;
-import aplicaçãopes.ctrlCadProd;
+import folderControl.ctrlCadProd;
 /**
  *
  * @author gusta
