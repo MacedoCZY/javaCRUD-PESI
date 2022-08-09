@@ -143,14 +143,14 @@ public class listagemProduto extends javax.swing.JFrame {
 
     private void buttonHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonHomeActionPerformed
         // TODO add your handling code here:
-        AplicaçãoPes.Menu.setVisible(true);
         AplicaçãoPes.Menu.listagemproduto.dispose();
+        AplicaçãoPes.Menu.setVisible(true);
     }//GEN-LAST:event_buttonHomeActionPerformed
 
     private void buttonCadProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCadProdActionPerformed
         // TODO add your handling code here:
         cadastroproduto = new cadastroProduto();
-        list();
+        AplicaçãoPes.Menu.listagemproduto.setEnabled(false);
         cadastroproduto.setVisible(true);
     }//GEN-LAST:event_buttonCadProdActionPerformed
 
@@ -158,6 +158,7 @@ public class listagemProduto extends javax.swing.JFrame {
         // TODO add your handling code here:
         editprod = new editProd();
         ctrlEditProd ctrlviewprod = new ctrlEditProd(AplicaçãoPes.Menu.listagemproduto, AplicaçãoPes.Menu.listagemproduto.editprod);
+        AplicaçãoPes.Menu.listagemproduto.setEnabled(false);
         ctrlviewprod.show();
         editprod.setVisible(true);
     }//GEN-LAST:event_buttonEditProdActionPerformed
@@ -166,6 +167,7 @@ public class listagemProduto extends javax.swing.JFrame {
         // TODO add your handling code here:
         viewprod = new viewProd();
         ctrlViewProd ctrlviewprod = new ctrlViewProd(AplicaçãoPes.Menu.listagemproduto, AplicaçãoPes.Menu.listagemproduto.viewprod);
+        AplicaçãoPes.Menu.listagemproduto.setEnabled(false);
         ctrlviewprod.show();
         viewprod.setVisible(true);
     }//GEN-LAST:event_buttonViewProdActionPerformed

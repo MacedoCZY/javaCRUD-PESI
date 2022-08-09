@@ -248,6 +248,9 @@ public class viewProd extends javax.swing.JFrame {
     private void buttonCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCloseActionPerformed
         // TODO add your handling code here:
         AplicaçãoPes.Menu.listagemproduto.viewprod.dispose();
+        AplicaçãoPes.Menu.listagemproduto.setEnabled(true);
+        AplicaçãoPes.Menu.listagemproduto.setAlwaysOnTop(true);
+        AplicaçãoPes.Menu.listagemproduto.setAlwaysOnTop(false);
     }//GEN-LAST:event_buttonCloseActionPerformed
 
     private void FieldIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FieldIDActionPerformed

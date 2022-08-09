@@ -249,6 +249,9 @@ public class editProd extends javax.swing.JFrame {
     private void buttonCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCloseActionPerformed
         // TODO add your handling code here:
         AplicaçãoPes.Menu.listagemproduto.editprod.dispose();
+        AplicaçãoPes.Menu.listagemproduto.setEnabled(true);
+        AplicaçãoPes.Menu.listagemproduto.setAlwaysOnTop(true);
+        AplicaçãoPes.Menu.listagemproduto.setAlwaysOnTop(false);
     }//GEN-LAST:event_buttonCloseActionPerformed
 
     private void FieldIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FieldIDActionPerformed
@@ -268,6 +271,9 @@ public class editProd extends javax.swing.JFrame {
             FieldCodBarr.getText(),
             Ativo.isSelected());
         AplicaçãoPes.Menu.listagemproduto.list();
+        AplicaçãoPes.Menu.listagemproduto.setEnabled(true);
+        AplicaçãoPes.Menu.listagemproduto.setAlwaysOnTop(true);
+        AplicaçãoPes.Menu.listagemproduto.setAlwaysOnTop(false);
     }//GEN-LAST:event_buttonSaveActionPerformed
 
     private void combBoxICMSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combBoxICMSActionPerformed
