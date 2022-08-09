@@ -29,7 +29,7 @@ public class viewProd extends javax.swing.JFrame {
         combBoxICMS.setEnabled(false);
         combBoxEMPAC.setEnabled(false);
         Ativo.setEnabled(false);
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
     }
     
     /**

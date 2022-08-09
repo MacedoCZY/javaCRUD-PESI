@@ -21,7 +21,7 @@ public class editProd extends javax.swing.JFrame {
     public int lastId = 0;
     public editProd() {
         initComponents();
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
     }
     
  

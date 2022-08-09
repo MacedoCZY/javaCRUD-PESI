@@ -28,7 +28,7 @@ public class cadastroProduto extends javax.swing.JFrame {
     public cadastroProduto() {
         initComponents();
         atualizaId();
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
     }
 
     public void atualizaId(){
@@ -273,6 +273,7 @@ public class cadastroProduto extends javax.swing.JFrame {
     private void buttonCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCloseActionPerformed
         // TODO add your handling code here:
        AplicaçãoPes.Menu.listagemproduto.cadastroproduto.dispose();
+       AplicaçãoPes.Menu.listagemproduto.list();
        AplicaçãoPes.Menu.listagemproduto.setEnabled(true);
        AplicaçãoPes.Menu.listagemproduto.setAlwaysOnTop(true);
        AplicaçãoPes.Menu.listagemproduto.setAlwaysOnTop(false);
@@ -294,10 +295,6 @@ public class cadastroProduto extends javax.swing.JFrame {
             FieldPreco.getText(),
             FieldCodBarr.getText(),
             Ativo.isSelected());
-        AplicaçãoPes.Menu.listagemproduto.list();
-        AplicaçãoPes.Menu.listagemproduto.setEnabled(true);
-        AplicaçãoPes.Menu.listagemproduto.setAlwaysOnTop(true);
-        AplicaçãoPes.Menu.listagemproduto.setAlwaysOnTop(false);
     }//GEN-LAST:event_buttonSaveActionPerformed
 
     private void combBoxICMSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combBoxICMSActionPerformed
