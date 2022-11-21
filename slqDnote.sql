@@ -1,1 +1,2 @@
+CREATE DATABASE IF NOT EXISTS dnote;
 SELECT * FROM dnote.prod;
